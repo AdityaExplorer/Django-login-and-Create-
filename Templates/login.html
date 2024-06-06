@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+<form action="Login" method="post">
+    {% csrf_token %}
+    <div class="content">
+        <p class="result">{{ Result }}</p>
+            <label>Email</label>
+            <input type="email" id="email" name="email" required>
+            <label>Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button>
+                Login
+            </button>
+            <button>
+                <a href="./">Home</a>
+            </button>
+    </div>
+</form>
+{% if message2 %}
+<h3>{{message2}}</h3>
+{% endif %}
+
+{% if message %}
+<h3>{{message}}</h3>
+{% endif %}
+</body>
+</html>
